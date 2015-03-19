@@ -9,7 +9,7 @@
 ## The function makeCacheMatrix creates a special "matrix" object that
 ## can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
-##set the value of matrix
+       ##set the value of matrix
             inv<-NULL
             set<-function(y) {
                x<<-y

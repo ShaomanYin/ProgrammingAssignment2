@@ -42,3 +42,30 @@ cacheSolve <- function(x, ...) {
         return(inv)
         ## Return a matrix that is the inverse of 'x'
 }
+
+
+##Showing the reduced computer time using these functions
+set.seed(12345)
+r<-rnorm(1000000)
+a<-matrix(r,1000,1000)
+
+##conventional method (method 1)
+start.time1 = Sys.time()
+solve(a) 
+time1 = Sys.time() - start.time1
+print(time1)
+
+##use the funcitons (method 2)
+start.time2 = Sys.time()
+b<-makeCacheMatrix(a)
+cacheSovle(b)
+time2 = Sys.time() - start.time2
+print(time2)
+
+##time2 will be slightly less than time1
+##the method 2 will be more efficient during large iterative process  
+
+
+###########################################################################END
+
+
